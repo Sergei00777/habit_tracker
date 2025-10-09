@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/swipe.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>{% block title %}Трекер Привычек{% endblock %}</h1>
+            <nav class="nav">
+                <a href="{{ url_for('main.index') }}" class="nav-link">Сегодня</a>
+                <a href="{{ url_for('main.stats') }}" class="nav-link">Статистика</a>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="app-footer">
+            <div class="user-info">Сергей</div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/swipe.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

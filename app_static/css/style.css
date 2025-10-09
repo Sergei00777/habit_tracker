@@ -1,0 +1,268 @@
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 100vh;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Шапка */
+.app-header {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.app-header h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background 0.3s;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Основной контент */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Контейнер сегодняшнего дня */
+.today-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.progress-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.progress-header h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.progress-counter {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Контейнер карточки */
+.habit-card-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.habit-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 2px solid #e8e8e8;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.habit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.habit-content h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.habit-content p {
+    color: #7f8c8d;
+    line-height: 1.5;
+    font-size: 1em;
+}
+
+/* Индикаторы свайпа */
+.swipe-indicators {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding: 0 10px;
+}
+
+.indicator {
+    font-size: 0.9em;
+    color: #bdc3c7;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.indicator.left {
+    color: #e74c3c;
+}
+
+.indicator.right {
+    color: #2ecc71;
+}
+
+/* Кнопки для десктопа */
+.desktop-buttons {
+    display: none;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-fail {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-fail:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: #2ecc71;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #27ae60;
+    transform: translateY(-2px);
+}
+
+/* Сообщение о выполнении */
+.completion-message {
+    text-align: center;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.completion-message h3 {
+    color: #2ecc71;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.completion-message p {
+    color: #7f8c8d;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Футер */
+.app-footer {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    text-align: center;
+    border-top: 1px solid #e8e8e8;
+}
+
+.user-info {
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Адаптивность */
+@media (min-width: 768px) {
+    .app-container {
+        max-width: 450px;
+        min-height: 90vh;
+        margin: 5vh auto;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .desktop-buttons {
+        display: flex;
+    }
+
+    .swipe-indicators {
+        display: none;
+    }
+}
+
+/* Анимации */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.habit-card {
+    animation: slideIn 0.5s ease;
+}
+
+/* Состояния карточки при свайпе */
+.habit-card.swiping-left {
+    background: #ffeaea;
+    border-color: #e74c3c;
+}
+
+.habit-card.swiping-right {
+    background: #eaffea;
+    border-color: #2ecc71;
+}
