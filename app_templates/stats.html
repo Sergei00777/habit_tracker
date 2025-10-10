@@ -5,6 +5,45 @@
 {% block content %}
 <div class="stats-container">
     <h2>Статистика</h2>
-    <div class="stats-loading">Загрузка статистики...</div>
+
+    <!-- Общая статистика -->
+    <div class="stats-overview">
+        <div class="stat-card">
+            <h3>Общий прогресс</h3>
+            <div class="stat-value" id="total-completed">0</div>
+            <div class="stat-label">Выполнено всего</div>
+        </div>
+        <div class="stat-card">
+            <h3>Успешность</h3>
+            <div class="stat-value" id="success-rate">0%</div>
+            <div class="stat-label">Процент выполнения</div>
+        </div>
+        <div class="stat-card">
+            <h3>В среднем</h3>
+            <div class="stat-value" id="average-week">0</div>
+            <div class="stat-label">Привычек в неделю</div>
+        </div>
+    </div>
+
+    <!-- Прогресс за сегодня -->
+    <div class="today-stats">
+        <h3>Сегодня</h3>
+        <div class="progress-bar">
+            <div class="progress-fill" id="today-progress-bar"></div>
+        </div>
+        <div class="progress-text" id="today-progress-text">0/0 выполнено</div>
+    </div>
+
+    <!-- График за последние 7 дней -->
+    <div class="weekly-stats">
+        <h3>Последние 7 дней</h3>
+        <div class="chart-container">
+            <div class="chart" id="weekly-chart"></div>
+        </div>
+    </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/stats.js') }}"></script>
 {% endblock %}

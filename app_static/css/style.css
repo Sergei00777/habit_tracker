@@ -266,3 +266,155 @@ body {
     background: #eaffea;
     border-color: #2ecc71;
 }
+
+/* Стили для статистики */
+.stats-container {
+    padding: 20px;
+}
+
+.stats-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 2em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.8em;
+    color: #95a5a6;
+}
+
+/* Прогресс за сегодня */
+.today-stats {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.today-stats h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #ecf0f1;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    text-align: center;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* График недели */
+.weekly-stats {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.weekly-stats h3 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.chart-container {
+    padding: 10px;
+}
+
+.chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 200px;
+    gap: 10px;
+}
+
+.chart-day {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.chart-bar-container {
+    flex: 1;
+    width: 30px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.chart-bar {
+    width: 100%;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 4px 4px 0 0;
+    transition: height 0.5s ease;
+    min-height: 5px;
+}
+
+.chart-label {
+    font-size: 0.8em;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.chart-value {
+    font-size: 0.7em;
+    color: #95a5a6;
+}
+
+.error-message {
+    text-align: center;
+    padding: 40px;
+    background: #ffeaea;
+    border-radius: 12px;
+    color: #e74c3c;
+}
+
+.error-message button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
