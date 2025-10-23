@@ -1,0 +1,24 @@
+habit_tracker/
+├── app/
+│   ├── static/
+│   │   ├── css/
+│   │   │   ├── style.css
+│   │   │   ├── swipe.css
+│   │   │   └── auth.css
+│   │   └── js/
+│   │       ├── app.js
+│   │       ├── stats.js
+│   │       └── swipe.js
+│   ├── templates/
+│   │   ├── base.html
+│   │   ├── index.html
+│   │   ├── stats.html
+│   │   ├── login.html
+│   │   └── register.html
+│   ├── __init__.py
+│   ├── models.py
+│   └── routes.py
+├── instance/
+├── app.py
+├── config.py
+└── requirements.txt

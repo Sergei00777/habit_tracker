@@ -7,20 +7,22 @@
     <div class="progress-header">
         <h2>Сегодня</h2>
         <div class="progress-counter">
-            <span id="completed-count">0</span> из <span id="total-habits">{{ config.HABITS_PER_DAY }}</span> привычек
+            <span id="completed-count">0</span> из <span id="total-habits">7</span> привычек
         </div>
     </div>
 
     <!-- Карточка привычки -->
     <div class="habit-card-container">
-        <div id="habit-card" class="habit-card">
-            <div class="habit-content">
-                <h3 id="habit-name">Загрузка...</h3>
-                <p id="habit-description">Получаем вашу привычку на сегодня</p>
-            </div>
-            <div class="swipe-indicators">
-                <div class="indicator left">👈 Облажался</div>
-                <div class="indicator right">Справился 👉</div>
+        <div class="swipe-container">
+            <div id="habit-card" class="habit-card">
+                <div class="habit-content">
+                    <h3 id="habit-name">Загрузка...</h3>
+                    <p id="habit-description">Получаем вашу привычку на сегодня</p>
+                </div>
+                <div class="swipe-indicators">
+                    <div class="indicator left">👈 Пропустить</div>
+                    <div class="indicator right">Выполнить 👉</div>
+                </div>
             </div>
         </div>
     </div>
@@ -28,10 +30,10 @@
     <!-- Кнопки для десктопа -->
     <div class="desktop-buttons">
         <button class="btn btn-fail" onclick="handleSwipe(false)">
-            ❌ Облажался
+            ❌ Пропустить
         </button>
         <button class="btn btn-success" onclick="handleSwipe(true)">
-            ✅ Справился
+            ✅ Выполнить
         </button>
     </div>
 
@@ -45,6 +47,6 @@
 
 {% block scripts %}
 <script>
-    const HABITS_PER_DAY = {{ config.HABITS_PER_DAY }};
+    const HABITS_PER_DAY = 7;
 </script>
 {% endblock %}
